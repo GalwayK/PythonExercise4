@@ -13,11 +13,12 @@ for text_file in text_files:
     pdf.cell(w=0, h=12, txt=text_name, ln=1)
 
     pdf.set_font(family='Times', size=12)
+
     with open(text_file) as file:
         for line in file:
             n = 110
             lines = [line[i: i + n] for i in range(0, len(line), n)]
-            print(lines)
+
             for text_line in lines:
                 pdf.cell(w=0, h=10, txt=f"{text_line}", ln=1)
 
